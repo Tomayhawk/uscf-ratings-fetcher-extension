@@ -3,21 +3,28 @@
 <head>
   <style>
     body { width: 320px; padding: 15px; font-family: sans-serif; }
+    h3 { margin-top: 0; margin-bottom: 5px; color: #333; }
+    textarea { 
+      width: 100%; height: 120px; margin-bottom: 10px; 
+      font-family: monospace; padding: 5px; box-sizing: border-box;
+      font-size: 11px;
+    }
     button { 
       width: 100%; padding: 10px; background: #2773ae; color: white; 
-      border: none; cursor: pointer; font-size: 14px; border-radius: 4px;
+      border: none; cursor: pointer; border-radius: 4px; font-weight: bold;
     }
     button:hover { background: #1b5480; }
-    #status { margin-top: 10px; font-size: 12px; color: #333; line-height: 1.4; }
-    .progress { color: #2773ae; font-weight: bold; }
-    .error { color: red; }
+    button:disabled { background: #ccc; cursor: default; }
+    #status { font-size: 13px; color: #333; margin-bottom: 4px; line-height: 1.4; }
+    #details { font-size: 11px; color: #777; margin-bottom: 10px; height: 15px; }
   </style>
 </head>
 <body>
-  <h3>BAC Live Rating Fetcher</h3>
-  <p>Scrapes entries & checks USCF live history.</p>
-  <button id="downloadBtn">Get Live Ratings & CSV</button>
-  <div id="status"></div>
+  <h3>Smart ID Scraper</h3>
+  <div id="status">Ready.</div>
+  <div id="details"></div>
+  <textarea id="idOutput" readonly placeholder="IDs will appear here..."></textarea>
+  <button id="copyBtn" disabled>Copy</button>
   <script src="popup.js"></script>
 </body>
 </html>

@@ -1,25 +1,23 @@
 {
   "manifest_version": 3,
-  "name": "BayAreaChess Entry Scraper",
-  "version": "1.2",
-  "description": "Scrapes entries and fetches live USCF ratings.",
+  "name": "Smart USCF ID Scraper",
+  "version": "2.1",
+  "description": "Instantly grabs linked IDs and validates others.",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "clipboardWrite"
   ],
   "host_permissions": [
-    "https://*.bayareachess.com/*",
-    "https://ratings-api.uschess.org/*",
-    "https://ratings.uschess.org/*"
+    "https://*/*" 
   ],
   "content_scripts": [
     {
-      "matches": ["https://*.bayareachess.com/*"],
+      "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
   ],
   "action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon.png"
+    "default_popup": "popup.html"
   }
 }
